@@ -13,7 +13,7 @@ Tested with:
 ### Dependencies
 * [dockcheck.sh](https://github.com/mag37/dockcheck/blob/main/dockcheck.sh)
 * [regclient/regctl](https://github.com/regclient/regclient) (Licensed under Apache-2.0 License)
-* Zabbix-Server
+* Zabbix-Server with timeouts set up to 30 seconds! (Timeout=30)
 * Host with zabbix-agent2 and docker installed
 
 ### Installing
