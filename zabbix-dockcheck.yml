@@ -1,0 +1,49 @@
+---
+
+- name: check docker images for update for zabbix 
+  hosts: debian12
+  tasks:
+    - name: Get DEB architecture
+      shell: dpkg --print-architecture
+      register: architecture
+
+    - set_fact:
+        architecture: "{{ architecture.stdout }}"
+
+    - name: Download dockcheck.sh script
+      ansible.builtin.get_url:
+        url: https://raw.githubusercontent.com/mag37/dockcheck/main/dockcheck.sh
+        dest: /etc/zabbix/scripts/dockcheck.sh
+        mode: '0755'
+        owner: zabbix
+        group: zabbix
+
+    - name: Download regctl script
+      ansible.builtin.get_url:
+        url: https://github.com/regclient/regclient/releases/latest/download/regctl-linux-{{ architecture }}
+        dest: /etc/zabbix/scripts/regctl
+
+    - name: Change file ownership, group and permissions
+      ansible.builtin.file:
+        path: /etc/zabbix/scripts/regctl
+        mode: '0755'
+        owner: zabbix
+        group: zabbix
+
+    - name: Download dockcheck.conf
+      ansible.builtin.get_url:
+        url: https://raw.githubusercontent.com/emodii/zabbix-docker-image-updates/refs/heads/main/dockcheck.conf
+        dest: /etc/zabbix/zabbix_agent2.d/dockcheck.conf
+
+    - name: adding user zabbix to group docker
+      user:
+        name: zabbix
+        groups: docker
+        append: yes
+
+    - name: restart zabbix-agent2
+      systemd:
+        state: restarted
+        daemon_reload: yes
+        name: zabbix-agent2
+      changed_when: 0
