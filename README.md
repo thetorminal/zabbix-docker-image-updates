@@ -36,7 +36,7 @@ Manual:
       Confirm with "y": `Required dependency 'regctl' missing, do you want it downloaded? y/[n] y`  
       `chown zabbix:zabbix dockcheck.sh && chmod 0755 /etc/zabbix/scripts/regctl`  
 * add "dockcheck.conf" to /etc/zabbix/zabbix_agent2.d/:  
-      `curl -L https://github.com/emodii/zabbix-docker-image/dockcheck.conf -o /etc/zabbix/zabbix_agent2.d/dockcheck.conf`  
+      `curl -L https://raw.githubusercontent.com/emodii/zabbix-docker-image-updates/refs/heads/main/dockcheck.conf -o /etc/zabbix/zabbix_agent2.d/dockcheck.conf`  
 
 via Ansible playbook:  
 * run the playbook `zabbix-dockcheck.yml` on host(s) you want to monitor docker on.  
