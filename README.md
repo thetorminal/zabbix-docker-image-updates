@@ -34,7 +34,7 @@ Manual:
      chown zabbix:zabbix /etc/zabbix/scripts/dockcheck.sh && chmod 0755 /etc/zabbix/scripts/dockcheck.sh`  
 * run "dockcheck.sh" to install regctl:  
      ```sh
-     bash /etc/zabbix/scripts/dockcheck.sh -n`
+     bash /etc/zabbix/scripts/dockcheck.sh -n
      # Confirm with "y":   
      Required dependency 'regctl' missing, do you want it downloaded? y/[n] y  
      chown zabbix:zabbix dockcheck.sh && chmod 0755 /etc/zabbix/scripts/regctl`  
