@@ -10,7 +10,7 @@ zabbix_export:
       description: |
         Monitoring of docker image updates
         ---
-        https://github.com/emodii/zabbix-docker-image
+        https://github.com/thetorminal/zabbix-docker-image-updates
       groups:
         - name: Templates
       items:
