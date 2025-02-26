@@ -32,7 +32,7 @@
 
     - name: Download dockcheck.conf
       ansible.builtin.get_url:
-        url: https://raw.githubusercontent.com/emodii/zabbix-docker-image-updates/refs/heads/main/dockcheck.conf
+        url: https://raw.githubusercontent.com/thetorminal/zabbix-docker-image-updates/refs/heads/main/dockcheck.conf
         dest: /etc/zabbix/zabbix_agent2.d/dockcheck.conf
 
     - name: adding user zabbix to group docker
