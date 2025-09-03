@@ -59,11 +59,14 @@ via Ansible playbook:
 * run the playbook `zabbix-dockcheck.yml` on host(s) you want to monitor docker on.  
 
 ## Version History
+* 0.2
+    * fixed issue #3 (no updates equaled in an error message in zabbix) 
 * 0.1
     * Initial Release
 
 ## To-Do
 * List name of image, which needs an update (using Zabbix LLD)
+    * currently in progress 
 
 ## Acknowledgments
 * [Github - dockcheck](https://github.com/mag37/dockcheck/tree/main)
