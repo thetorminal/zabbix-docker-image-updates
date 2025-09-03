@@ -60,7 +60,8 @@ via Ansible playbook:
 
 ## Version History
 * 0.2
-    * fixed issue #3 (no updates equaled in an error message in zabbix) 
+    * fixed [#2](https://github.com/thetorminal/zabbix-docker-image-updates/pull/2) (dockcheck changed message from "no updates installed" to "no updates available") 
+    * fixed [#2](https://github.com/thetorminal/zabbix-docker-image-updates/pull/2) and [#3](https://github.com/thetorminal/zabbix-docker-image-updates/issues/3) (no updates equaled in an error message in zabbix) 
 * 0.1
     * Initial Release
 
