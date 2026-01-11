@@ -35,4 +35,4 @@ Manual:
 
 #### On Zabbix frontend server:  
 - Download and import the template `docker-image-update-lld.yaml`  
-- Assign the `Template Docker Images Updates with LLD'` to the docker host(s) you want to monitor  
+- Assign the `Template Docker Images Updates with LLD` to the docker host(s) you want to monitor  
