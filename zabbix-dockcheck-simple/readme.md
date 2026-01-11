@@ -1,10 +1,6 @@
 ### Installing
 This is the installation readme for zabbix-dockcheck-simple, which shows the updates in Zabbix like this: "2 Docker Image updates on host-xyz".
 
-#### On Zabbix frontend server:  
-- Download and import the template `docker-image-update.yaml`  
-- Assign the `Template Docker Image Updates'` to the docker host(s) you want to monitor  
-
 #### On all hosts you want to monitor:  
 Manual:  
 * Install and configure package zabbix-agent2 (if not installed):  
@@ -33,5 +29,10 @@ Manual:
      systemctl restart zabbix-agent2
      ```
 
+#### On Zabbix frontend server:  
+- Download and import the template `docker-image-update.yaml`  
+- Assign the `Template Docker Image Updates'` to the docker host(s) you want to monitor  
+
 via Ansible playbook:  
-* run the playbook `zabbix-dockcheck.yml` on host(s) you want to monitor docker on.  
+* run the playbook `ansible-zabbix-dockcheck.yml` on host(s) you want to monitor docker on.  
+
