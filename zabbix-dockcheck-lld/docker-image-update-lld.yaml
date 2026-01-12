@@ -10,25 +10,27 @@ zabbix_export:
       description: |
         Monitoring of Docker Image Updates on a host, using LLD (low level discovery) to show the name of the available update.
         Dockcheck.sh is used in the background to determine the updates.
+        ---
         Made by https://torminal.com
+        Source: https://github.com/thetorminal/zabbix-docker-image-updates/tree/main/zabbix-dockcheck-lld
       groups:
         - name: Templates
       discovery_rules:
         - uuid: 671b85847cb140ea8c1f377320593ccd
-          name: 'Dockcheck - containers with updates'
+          name: 'Dockcheck: search for containers with updates'
           key: 'dockcheck[]'
           delay: 10m
           lifetime: 1d
           item_prototypes:
-            - uuid: b5e5d3148f5f4341bd5367ed5902ad8f
-              name: 'Docker update available: {#CONTAINER}'
+            - uuid: 2a31c7a7df044fd98a3678f67524b531
+              name: 'Check updates for {#CONTAINER}'
               key: 'dockcheck[status,{#CONTAINER}]'
               delay: 10m
               trigger_prototypes:
-                - uuid: 8324c4ca782443469e785a47180ff435
+                - uuid: f686cedb5b804d03b387fddeb6935cff
                   expression: 'last(/Template Docker Images Updates with LLD/dockcheck[status,{#CONTAINER}])=1'
                   name: 'Docker update available for {#CONTAINER}'
                   priority: WARNING
                   tags:
-                    - tag: service
+                    - tag: application
                       value: docker
