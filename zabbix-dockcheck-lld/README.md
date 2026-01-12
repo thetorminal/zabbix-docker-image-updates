@@ -7,6 +7,10 @@ Manual:
      ```sh
      apt-get install zabbix-agent2
      ```
+* add the user "zabbix" to the "docker" group, so zabbix has access to docker:
+     ```sh
+     usermod -aG docker zabbix
+     ```
 * download "dockcheck.sh" from dockcheck repository to new directory `/etc/zabbix/scripts/` and change permission:  
      ```sh
      mkdir /etc/zabbix/scripts
@@ -35,4 +39,16 @@ Manual:
 
 #### On Zabbix frontend server:  
 - Download and import the template `docker-image-update-lld.yaml`  
-- Assign the `Template Docker Images Updates with LLD` to the docker host(s) you want to monitor  
+- Assign the `Template Docker Images Updates with LLD` to the docker host(s) you want to monitor
+
+### Problems
+If you run into problems, test the script `dockcheck-lld.sh` locally with `bash /etc/zabbix/scripts/dockcheck-lld.sh`.  
+You should get an json output and the cache file at `/tmp/dockcheck_cache.txt`.   
+Test, if the file exists and has content with `cat /tmp/dockcheck_cache.txt`.
+If it does not work, create the file and allow the user zabbix access to it with:
+```sh
+touch /tmp/dockcheck_cache.txt
+chown zabbix:zabbix /tmp/dockcheck_cache.txt
+chmod 600 /tmp/dockcheck_cache.txt
+```
+After that, run the script again and test the cache file for content again with `cat /tmp/dockcheck_cache.txt`.
