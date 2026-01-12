@@ -37,6 +37,8 @@ Quicklinks:
 
 
 ## Version History
+* 1.1
+    * fixed timeout problems in the zabbix-dockcheck-lld with caching on the host (/tmp/dockcheck_cache.txt)
 * 1.0
     * split template in two versions, added version which shows the name of the container, which needs an image update (using low level discovery)
 * 0.2
@@ -47,4 +49,4 @@ Quicklinks:
 
 ## Acknowledgments
 * [Github - dockcheck](https://github.com/mag37/dockcheck/tree/main)
-* Disclaimer: This project partitially used ChatGPT to understand the Zabbix low level discovery and helped building the script
+* Disclaimer: This project partitially used LLMs to understand the Zabbix low level discovery and helped building the script
