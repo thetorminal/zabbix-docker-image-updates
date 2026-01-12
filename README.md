@@ -4,7 +4,7 @@ Monitoring of docker image updates with Zabbix.
 ## Description
 Based on “dockcheck” (CLI query to check updates): [Github - dockcheck](https://github.com/mag37/dockcheck/tree/main)  
 
-This template is split into to versions, which you can choose from.
+This template is split into two versions, which you can choose from.
 
 #### zabbix-dockcheck-simple
 Shows count of available docker image updates on a host. Example:  
