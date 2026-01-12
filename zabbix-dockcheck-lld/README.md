@@ -41,7 +41,7 @@ Manual:
 - Download and import the template `docker-image-update-lld.yaml`  
 - Assign the `Template Docker Images Updates with LLD` to the docker host(s) you want to monitor
 
-### Problems
+### Troubleshooting
 If you run into problems, test the script `dockcheck-lld.sh` locally with `bash /etc/zabbix/scripts/dockcheck-lld.sh`.  
 You should get an json output and the cache file at `/tmp/dockcheck_cache.txt`.   
 Test, if the file exists and has content with `cat /tmp/dockcheck_cache.txt`.
