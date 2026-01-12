@@ -1,7 +1,7 @@
-### Installing
+## Installing
 This is the installation readme for zabbix-dockcheck-lld, which shows the updates in Zabbix like this: "Docker update available for container-xyz".
 
-#### On all hosts you want to monitor:  
+### On all hosts you want to monitor:  
 Manual:  
 * Install and configure package zabbix-agent2 (if not installed):  
      ```sh
@@ -37,11 +37,11 @@ Manual:
      systemctl restart zabbix-agent2
      ```
 
-#### On Zabbix frontend server:  
+### On Zabbix frontend server:  
 - Download and import the template `docker-image-update-lld.yaml`  
 - Assign the `Template Docker Images Updates with LLD` to the docker host(s) you want to monitor
 
-### Troubleshooting
+## Troubleshooting
 If you run into problems, test the script `dockcheck-lld.sh` locally with `bash /etc/zabbix/scripts/dockcheck-lld.sh`.  
 You should get an json output and the cache file at `/tmp/dockcheck_cache.txt`.   
 Test, if the file exists and has content with `cat /tmp/dockcheck_cache.txt`.
