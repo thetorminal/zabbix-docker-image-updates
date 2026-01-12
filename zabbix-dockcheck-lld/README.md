@@ -29,9 +29,9 @@ Manual:
      curl -L https://raw.githubusercontent.com/thetorminal/zabbix-docker-image-updates/refs/heads/main/zabbix-dockcheck-lld/dockcheck-lld.sh -o /etc/zabbix/scripts/dockcheck-lld.sh
      chown zabbix:zabbix /etc/zabbix/scripts/dockcheck-lld.sh && chmod 0755 /etc/zabbix/scripts/dockcheck-lld.sh
      ```
-* add "dockcheck.conf" to /etc/zabbix/zabbix_agent2.d/:  
+* add "dockcheck-lld.conf" to /etc/zabbix/zabbix_agent2.d/:  
      ```sh
-     curl -L https://raw.githubusercontent.com/thetorminal/zabbix-docker-image-updates/refs/heads/main/zabbix-dockcheck-lld/dockcheck-lld.conf -o /etc/zabbix/zabbix_agent2.d/dockcheck.conf
+     curl -L https://raw.githubusercontent.com/thetorminal/zabbix-docker-image-updates/refs/heads/main/zabbix-dockcheck-lld/dockcheck-lld.conf -o /etc/zabbix/zabbix_agent2.d/dockcheck-lld.conf
      ```
 * restart zabbix-agent2
      ```sh
