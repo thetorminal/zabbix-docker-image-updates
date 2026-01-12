@@ -24,9 +24,10 @@ Manual:
      Required dependency 'regctl' missing, do you want it downloaded? y/[n] y  
      chown zabbix:zabbix dockcheck.sh && chmod 0755 /etc/zabbix/scripts/regctl
      ```
-* add "dockcheck-lld.sh to /etc/zabbix/scripts:
+* add "dockcheck-lld.sh to /etc/zabbix/scripts and change permissions:
      ```sh
      curl -L https://raw.githubusercontent.com/thetorminal/zabbix-docker-image-updates/refs/heads/main/zabbix-dockcheck-lld/dockcheck-lld.sh -o /etc/zabbix/scripts/dockcheck-lld.sh
+     chown zabbix:zabbix /etc/zabbix/scripts/dockcheck-lld.sh && chmod 0755 /etc/zabbix/scripts/dockcheck-lld.sh
      ```
 * add "dockcheck.conf" to /etc/zabbix/zabbix_agent2.d/:  
      ```sh
